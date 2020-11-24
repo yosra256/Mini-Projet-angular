@@ -1,0 +1,121 @@
+<!--<div class="topnav">
+  <a class="active"> Annuaire Salle de sport</a>
+  <a  (click)="cs.gotoacceuil()">Acceuil</a>
+  <a (click)="cs.goToAdd()" >Ajouter </a>
+  <a >Configuration</a>
+</div>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <a class="navbar-brand" >Annuaire Salle de sport</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" (click)="cs.gotoacceuil()">Acceuil <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" (click)="cs.goToAdd()">Ajouter</a>
+    </div>
+  </div>
+
+
+    <input class="form-control mr-sm-2" type="search" [(ngModel)]="cs.critere" placeholder="id/cin/nom/prenom/numero" aria-label="Search">
+  <input class="form-control mr-sm-2" type="search" [(ngModel)]="cs.valeur" aria-label="Search" placeholder="valeur">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="cs.rechercheindice1(cs.critere,cs.valeur)">Search</button>
+  <a class="mod"  >recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</a>
+  <button type="button" class="btn btn-secondary" (click)="cs.deconnecter()">se deconnecter</button>
+</nav>
+
+
+
+<!--<button (click)="cs.goToAdd()">ajouter</button>-->
+<!--<button (click)="cs.afficherclients()">{{cs.afficherlist}}</button>-->
+
+<!--<div *ngIf="cs.test">-->
+
+
+  <fieldset *ngIf="cs.affichcl">
+    <div>id:{{cs.idr}}</div>
+    cin:{{cs.cinr}}
+    <div>nom:{{cs.nomr}}</div>
+    prenom:{{cs.prenomr}}
+    <div>numero:{{cs.numeror}}</div>
+    <!--<button (click)="cs.gotomodifier(cs.idr)">modifier</button>-->
+    <button type="button" class="btn btn-outline-warning" (click)="cs.gotomodifier(cs.idr)" >Modifier</button>
+    <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>
+
+    <!--<button (click)="cs.deleteclient(cs.idr)">supprimer</button>-->
+  </fieldset>
+<app-fils [nombre]="cs.nbr" (msgsomme)="show($event)" ></app-fils>
+<div *ngIf="affiche==true" class="modifcol">le rendement du salle de sport est : {{sommerendement}} DT</div>
+
+
+<!--
+    <div>
+      critere:<input [(ngModel)]="cs.critere" placeholder="id/cin/nom/prenom/numero">
+      valeur:<input [(ngModel)]="cs.valeur">
+      <div>recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</div>
+       <button (click)="cs.rechercheindice1(cs.critere,cs.valeur)">recherche</button>
+      <button type="button" class="btn btn-info" (click)="cs.rechercheindice1(cs.critere,cs.valeur)">Recherche</button>-->
+  <!--<fieldset *ngIf="cs.affichcl">
+  <div>id:{{cs.idr}}</div>
+  cin:{{cs.cinr}}
+  <div>nom:{{cs.nomr}}</div>
+  prenom:{{cs.prenomr}}
+  <div>numero:{{cs.numeror}}</div>-->
+   <!--<button (click)="cs.gotomodifier(cs.idr)">modifier</button>-->
+    <!--<button type="button" class="btn btn-outline-warning" (click)="cs.gotomodifier(cs.idr)" >Modifier</button>
+    <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>-->
+
+    <!--<button (click)="cs.deleteclient(cs.idr)">supprimer</button>-->
+
+<!--</fieldset>
+</div>-->
+<!--
+<div *ngFor="let item of cs.listclients , let i=index" >
+  <div>id:{{item.id}}</div>
+  cin:{{item.cin}}
+  <div>nom: {{item.nom}}</div>
+  prenom:{{item.prenom}}
+  <div>numero:{{item.numero}}</div>
+  <button (click)="cs.goToModify(item.id)">modifier</button>-->
+  <!--<button type="button" class="btn btn-outline-warning"(click)="cs.goToModify(item.id)">Modifier</button>
+  <button (click)="cs.deleteclient(item.id)">supprimer</button>-->
+ <!-- <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(item.id)">Supprimer</button>
+
+  <div>------------------------------------------------------</div>
+</div>
+</div>-->
+
+<div class="form-group row">
+  <label for="search" class="col-sm-2 col-form-label" style="text-align: right;">Recherche</label>
+  <div class="col-sm-6">
+    <input type="text" [(ngModel)]="searchValue"  class="form-control" id="search" />
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">CIN</th>
+    <th scope="col">NOM</th>
+    <th scope="col">PRENOM</th>
+    <th scope="col">NUMERO</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of cs.listclients | recherche:searchValue "  (click)="cs.gotomodifier(item.id)">
+    <th scope="row">{{item.id}}</th>
+    <td>{{item.cin}}</td>
+    <td>{{item.nom}}</td>
+    <td>{{item.prenom}}</td>
+    <td>{{item.numero}}</td>
+    <td>
+      <button type="button" class="btn btn-outline-warning"(click)="cs.goToModify(item.id)">Modifier</button>
+      <!--<button (click)="cs.deleteclient(item.id)">supprimer</button>-->
+      <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(item.id)">Supprimer</button>
+
+    </td>
+  </tr>
+  </tbody>
+</table>

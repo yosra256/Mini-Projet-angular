@@ -1,0 +1,63 @@
+<!--<div class="topnav">
+  <a class="active"> Annuaire Salle de sport</a>
+  <a  (click)="cs.gotoacceuil()">Acceuil</a>
+  <a (click)="cs.goToAdd()" >Ajouter </a>
+  <a >Configuration</a>
+</div>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <a class="navbar-brand" >Annuaire Salle de sport</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" (click)="cs.gotoacceuil()">Acceuil <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" (click)="cs.goToAdd()">Ajouter</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!--
+<form #form="ngForm">
+  <div> id: <input name="id" #id="ngModel" [ngModel] > </div>
+  cin:<input name="cin" #cin="ngModel" [ngModel] required pattern="^[1-9][0-9]*$">
+  <div *ngIf="cin.invalid && cin.dirty" >le CIN est obligatoire  </div>
+  <div>nom:<input name="nom" #nom="ngModel" [ngModel] required></div>
+  prenom:<input name="prenom" #prenom="ngModel" [ngModel] required>
+  <div>numero:<input name="numero" #numero="ngModel" [ngModel] [maxLength]="8" minlength="8" required  pattern="^[1-9][0-9]*$"></div>
+  <div *ngIf="numero.invalid && numero.touched">le numero de telephone doit etre composé de 8 chiffres</div>
+  <button [disabled]="form.invalid" (click)="cs.addclient(form.value)">ajouter</button>
+</form>-->
+
+
+<form #form="ngForm">
+  <div class="form-group" >
+    <label for="formGroupExampleInput">Id:</label>
+    <input type="text" class="form-control"  name="id" #id="ngModel" [ngModel]  id="formGroupExampleInput" placeholder="saisir l'id du client">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">CIN:</label>
+    <input type="text" class="form-control" name="cin" #cin="ngModel" [ngModel] required pattern="^[0-9][0-9]*$" id="formGroupExampleInput2" placeholder="Saisir le CIN">
+  </div>
+  <div  *ngIf="cin.invalid && cin.dirty" class="attention" >le CIN est obligatoire  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Nom:</label>
+    <input type="text" name="nom" #nom="ngModel" [ngModel] required class="form-control" id="formGroupExampleInput3" placeholder="Saisir le nom">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Prenom:</label>
+    <input type="text" class="form-control" name="prenom" #prenom="ngModel" [ngModel] required  id="formGroupExampleInput4" placeholder="Saisir le prenom">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Numero de telephone:</label>
+    <input type="text" class="form-control" name="numero" #numero="ngModel" [ngModel] [maxLength]="8" minlength="8" required  pattern="^[1-9][0-9]*$" id="formGroupExampleInput5" placeholder="saisir le numero">
+  </div>
+  <div  class="attention" *ngIf="numero.invalid && numero.touched">le numero de telephone doit etre composé de 8 chiffres</div>
+  <!--<button [disabled]="form.invalid" (click)="cs.addclient(form.value)">ajouter</button>-->
+  <button [disabled]="form.invalid" (click)="cs.addclient(form.value)" type="button" class="btn btn-success">Ajouter</button>
+</form>
+

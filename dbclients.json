@@ -1,0 +1,62 @@
+{ "agents": [
+  {
+    "login": "admin",
+    "mdp": "admin"
+  },
+  {
+    "login": "agent1",
+    "mdp": "agent1"
+  },
+  {
+    "login": "agent2",
+    "mdp": "agent2"
+  }
+],
+  "clients": [
+    {
+      "id": "1",
+      "cin": "3333333",
+      "nom": "33333333",
+      "prenom": "3333333",
+      "numero": "33333333"
+    },
+    {
+      "id": "10",
+      "cin": "10",
+      "nom": "10",
+      "prenom": "10",
+      "numero": "10000000"
+    },
+    {
+      "id": "9999",
+      "cin": "999999",
+      "nom": "99999",
+      "prenom": "999999",
+      "numero": "99999999"
+    },
+    {
+      "id": "22",
+      "cin": "222222",
+      "nom": "yosra",
+      "prenom": "makhlouf",
+      "numero": "25639590"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

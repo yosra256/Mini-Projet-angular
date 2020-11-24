@@ -1,0 +1,20 @@
+<!--login:<input [(ngModel)]="log">
+mot de passe:<input [(ngModel)]="mdp" type="password">
+<button (click)="login(log,mdp)">s'authentifier</button>
+-->
+
+
+  <div >
+    <label for="exampleInputEmail1">LOGIN</label>
+    <input type="text" [(ngModel)]="log" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div >
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" [(ngModel)]="mdp" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" (click)="login(log,mdp)" class="btn btn-primary">Se Conecter</button>
+
