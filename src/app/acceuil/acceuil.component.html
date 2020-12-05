@@ -1,6 +1,6 @@
+<body>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light couleur" >
   <a class="navbar-brand" >Annuaire Salle de sport</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,30 +12,57 @@
     </div>
   </div>
 
-
-    <input class="form-control mr-sm-2" type="search" [(ngModel)]="cs.critere" placeholder="id/cin/nom/prenom/numero" aria-label="Search">
-  <input class="form-control mr-sm-2" type="search" [(ngModel)]="cs.valeur" aria-label="Search" placeholder="valeur">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="cs.rechercheindice1(cs.critere,cs.valeur)">Search</button>
-  <a class="mod"  >recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</a>
-  <button type="button" class="btn btn-secondary" (click)="cs.deconnecter()">se deconnecter</button>
+<div class="d-flex align-content-around">
+    <input class="form-control mr-sm-2 " type="search" [(ngModel)]="cs.critere" placeholder="id/cin/nom/prenom/numero" aria-label="Search">
+  <input class="form-control mr-sm-2 " type="search" [(ngModel)]="cs.valeur" aria-label="Search" placeholder="valeur">
+    <button class="btn btn-outline-light my-2 my-sm-0 mx-1 h-25" type="submit" (click)="cs.rechercheindice1(cs.critere,cs.valeur)">Search</button>
+  <!--<a class="mod"  >recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</a>-->
+  <button type="button" class="btn btn-secondary mx-3 " (click)="cs.deconnecter()">deconnecter</button>
+</div>
 </nav>
 
 
 
 
 
-  <fieldset *ngIf="cs.affichcl">
-    <div>id:{{cs.idr}}</div>
-    cin:{{cs.cinr}}
-    <div>nom:{{cs.nomr}}</div>
-    prenom:{{cs.prenomr}}
-    <div>numero:{{cs.numeror}}</div>
+  <fieldset *ngIf="cs.affichcl" class=" text-center ">
+    <!--<div>ID:{{cs.idr}}</div>
+    CIN:{{cs.cinr}}
+    <div>NOM:{{cs.nomr}}</div>
+    PRENOM:{{cs.prenomr}}
+    <div>NUMERO:{{cs.numeror}}</div>
 
     <button type="button" class="btn btn-outline-warning" (click)="cs.gotomodifier(cs.idr)" >Modifier</button>
-    <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>
+    <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>-->
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">CIN</th>
+        <th scope="col">NOM</th>
+        <th scope="col">PRENOM</th>
+        <th scope="col">NUMERO</th>
 
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
 
+        <td>{{cs.idr}}</td>
+        <td>{{cs.cinr}}</td>
+        <td>{{cs.nomr}}</td>
+        <td>{{cs.prenomr}}</td>
+        <td>{{cs.numeror}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-warning" (click)="cs.gotomodifier(cs.idr)" >Modifier</button>
+          <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
   </fieldset>
+
 <app-fils [nombre]="cs.nbr" (msgsomme)="show($event)" ></app-fils>
 <div *ngIf="affiche==true" class="modifcol">le rendement du salle de sport est : {{sommerendement}} DT</div>
 
@@ -77,3 +104,4 @@
   </tbody>
 </table>
 
+</body>

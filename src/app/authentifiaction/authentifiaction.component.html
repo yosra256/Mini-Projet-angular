@@ -1,15 +1,16 @@
 
-
-<div class="mx-5">
+<body style="background-color: #2D788D; height: 720px; color: azure;">
+<div class="mx-5" style="padding-left: 35% ;padding-top: 7%;">
   <div class="my-5 mx-5">
-    <label for="exampleInputEmail1">LOGIN</label>
+    <label for="exampleInputEmail1">Login</label>
     <input type="text" [(ngModel)]="log" class="form-control w-25 " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   <div  class="mx-5">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" [(ngModel)]="mdp" class="form-control w-25" id="exampleInputPassword1" placeholder="Password">
   </div>
-
-  <button type="submit" (click)="login(log,mdp)" class="btn btn-primary my-3 mx-5">Se Conecter</button>
+<div style="padding-left: 4%">
+  <button type="submit" (click)="login(log,mdp)" class="btn btn-primary my-5 mx-5">Se Conecter</button>
 </div>
-
+</div>
+</body>

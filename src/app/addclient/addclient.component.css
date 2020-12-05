@@ -1,31 +1,16 @@
 .attention{
   color: orangered;
 }
+.couleur{
+  background-color: #98B3BB !important;
+
+}
+body{
 
 
+  background-color: whitesmoke;
 
-/*.topnav {
-  background-color: ghostwhite;
-  overflow: hidden;
 }
 
-.topnav a {
-  float: left;
-  color: #81C795;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: #1A5029;
-  text-decoration: underline;
-}
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
 
-*/

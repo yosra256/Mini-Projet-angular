@@ -1,30 +1,33 @@
 
 
+<body>
 
 <form [formGroup]="form">
-  <div class="form-group">
+  <div class="form-group mx-5 ">
     <label for="formGroupExampleInput">Id:</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="id" [(ngModel)]="client.id">
+    <input type="text" class="form-control w-25 mx-2" id="formGroupExampleInput" formControlName="id" [(ngModel)]="client.id">
   </div>
-  <div class="form-group">
+  <div class="form-group mx-5 my-3">
     <label for="formGroupExampleInput2">CIN:</label>
-    <input type="text" class="form-control" formControlName="cin"  id="formGroupExampleInput2" [(ngModel)]="client.cin">
+    <input type="text" class="form-control w-25 mx-2" formControlName="cin"  id="formGroupExampleInput2" [(ngModel)]="client.cin">
   </div>
-  <div *ngIf="cin.invalid && cin.dirty" class="attention">le CIN est obligatoire  </div>
-  <div class="form-group">
+  <div *ngIf="cin.invalid && cin.dirty"  [ngStyle]="{color:'red'}" >le CIN est obligatoire  </div>
+  <div class="form-group mx-5 my-3">
     <label for="formGroupExampleInput2">Nom:</label>
-    <input type="text" class="form-control" formControlName="nom" id="formGroupExampleInput3" [(ngModel)]="client.nom">
+    <input type="text" class="form-control w-25 mx-2" formControlName="nom" id="formGroupExampleInput3" [(ngModel)]="client.nom">
   </div>
-  <div class="form-group">
+  <div class="form-group mx-5 my-3">
     <label for="formGroupExampleInput2">Prenom:</label>
-    <input type="text" class="form-control" formControlName="prenom" id="formGroupExampleInput4" [(ngModel)]="client.prenom">
+    <input type="text" class="form-control w-25 mx-2" formControlName="prenom" id="formGroupExampleInput4" [(ngModel)]="client.prenom">
   </div>
-  <div class="form-group">
+  <div class="form-group mx-5 my-3">
     <label for="formGroupExampleInput2">Numero de Telephone</label>
-    <input type="text" class="form-control" formControlName="numero" id="formGroupExampleInput5" [(ngModel)]="client.numero">
+    <input type="text" class="form-control w-25 mx-2" formControlName="numero" id="formGroupExampleInput5" [(ngModel)]="client.numero">
   </div>
-  <div *ngIf="numero.invalid && numero.dirty" class="attention">le numero de telephone doit etre composé de 8 chiffres </div>
-
-  <button [disabled]="form.invalid"  (click)="cs.modifyclient(id.value,form.value)" type="button" class="btn btn-warning">Modifier</button>
-  <button type="button" class="btn btn-info" (click)="cs.gotoacceuil()">Retour</button>
+  <div *ngIf="numero.invalid && numero.dirty" [ngStyle]="{color:'red'}">le numero de telephone doit etre composé de 8 chiffres </div>
+<div style="padding-left:2%">
+  <button [disabled]="form.invalid"  (click)="cs.modifyclient(id.value,form.value)" type="button" class="btn btn-warning mx-5">Modifier</button>
+  <button type="button" class="btn btn-info " (click)="cs.gotoacceuil()">Retour</button>
+</div>
 </form>
+</body>

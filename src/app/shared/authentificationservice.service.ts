@@ -11,7 +11,7 @@ export class AuthentificationserviceService {
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient) {
   }
 
-  /*listagent: agent[];
+  listagent: agent[];
 
   public charger() {
     this.http.get<agent[]>('http://localhost:3000/agents/').subscribe(
@@ -39,7 +39,7 @@ export class AuthentificationserviceService {
     }
 
   }
-*/
+
 
 }
 
