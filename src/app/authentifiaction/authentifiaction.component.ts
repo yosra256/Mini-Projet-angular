@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {client} from '../model/client';
 import {agent} from '../model/agent';
+import {AuthentificationserviceService} from '../shared/authentificationservice.service';
 
 @Component({
   selector: 'app-authentifiaction',
@@ -12,12 +13,12 @@ import {agent} from '../model/agent';
 export class AuthentifiactionComponent implements OnInit {
   listagent: agent[];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient) {
-    this.http.get<agent[]>('http://localhost:3000/agents/').subscribe(
-      (data) => {
-        this.listagent = data;
-      }
-    );
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient, public as: AuthentificationserviceService) {
+     this.http.get<agent[]>('http://localhost:3000/agents/').subscribe(
+       (data) => {
+         this.listagent = data;
+       }
+     );
   }
 
   log;

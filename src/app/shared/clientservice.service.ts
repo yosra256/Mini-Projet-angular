@@ -15,6 +15,9 @@ export class ClientserviceService {
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
+
+
+
   afficherlist = 'afficher';
   listclients: client[];
 
