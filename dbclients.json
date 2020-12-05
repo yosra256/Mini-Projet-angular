@@ -1,17 +1,18 @@
-{ "agents": [
-  {
-    "login": "admin",
-    "mdp": "admin"
-  },
-  {
-    "login": "agent1",
-    "mdp": "agent1"
-  },
-  {
-    "login": "agent2",
-    "mdp": "agent2"
-  }
-],
+{
+  "agents": [
+    {
+      "login": "admin",
+      "mdp": "admin"
+    },
+    {
+      "login": "agent1",
+      "mdp": "agent1"
+    },
+    {
+      "login": "agent2",
+      "mdp": "agent2"
+    }
+  ],
   "clients": [
     {
       "id": "1",
@@ -35,11 +36,11 @@
       "numero": "99999999"
     },
     {
-      "id": "22",
-      "cin": "222222",
-      "nom": "yosra",
-      "prenom": "makhlouf",
-      "numero": "25639590"
+      "id": "6528",
+      "cin": "234",
+      "nom": "khaireddine",
+      "prenom": "makhlouff",
+      "numero": "11113456"
     }
   ],
   "posts": [

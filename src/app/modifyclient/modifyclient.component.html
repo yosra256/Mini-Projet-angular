@@ -1,14 +1,4 @@
-<!--<form [formGroup]="form">
-  <div>id :<input  formControlName="id" placeholder={{ident}}></div>
-  cin: <input formControlName="cin" >
-  <div *ngIf="cin.invalid && cin.dirty" >le CIN est obligatoire  </div>
-  <div> nom:<input formControlName="nom"> </div>
-  <div> prenom:<input formControlName="prenom"> </div>
-  <div> numero:<input formControlName="numero"> </div>
-  <div *ngIf="numero.invalid && numero.dirty" >le numero de telephone doit etre composé de 8 chiffres </div>
-  <button [disabled]="form.invalid"  (click)="cs.modifyclient(id.value,form.value)" >modifier</button>
 
-</form>-->
 
 
 <form [formGroup]="form">
@@ -34,7 +24,7 @@
     <input type="text" class="form-control" formControlName="numero" id="formGroupExampleInput5" [(ngModel)]="client.numero">
   </div>
   <div *ngIf="numero.invalid && numero.dirty" class="attention">le numero de telephone doit etre composé de 8 chiffres </div>
-  <!--<button [disabled]="form.invalid"  (click)="cs.modifyclient(id.value,form.value)" >modifier</button>-->
+
   <button [disabled]="form.invalid"  (click)="cs.modifyclient(id.value,form.value)" type="button" class="btn btn-warning">Modifier</button>
   <button type="button" class="btn btn-info" (click)="cs.gotoacceuil()">Retour</button>
 </form>
