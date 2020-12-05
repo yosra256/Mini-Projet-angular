@@ -25,7 +25,7 @@ export class AuthentificationserviceService {
   mdp;
   test: boolean = false;
 
-  login(log, mdp) {
+  public login(log, mdp) {
     console.log(this.listagent);
     for (let i = 0; i < this.listagent.length; i++) {
       if ((this.listagent[i].login == log) && (this.listagent[i].mdp == mdp)) {

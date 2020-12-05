@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {client} from '../model/client';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,38 @@ export class ClientserviceService {
   test = true;
   show = 'afficher';
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private f: FormBuilder, private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
+  }
+
+  form = this.f.group({
+    id: ['', Validators.required],
+    cin: ['', [Validators.required, Validators.pattern('^[1-9]*$')]],
+    nom: ['', [Validators.required]],
+    prenom: ['', [Validators.required]],
+    numero: ['', [Validators.required, Validators.maxLength(8), Validators.minLength(8), Validators.pattern('^[0-9]*$')]]
+
+  });
+
+  get id() {
+    return this.form.get('id');
+  }
+
+  get cin() {
+    return this.form.get('cin');
+  }
+
+  get numero() {
+    return this.form.get('numero');
   }
 
 
+  affiche: boolean = false;
+  sommerendement: number;
 
+  showw(value) {
+    this.affiche = !this.affiche;
+    this.sommerendement = value;
+  }
 
   afficherlist = 'afficher';
   listclients: client[];
@@ -169,5 +196,6 @@ export class ClientserviceService {
   public getclientbyid(id: number) {
     return this.http.get<client>(this.clientsUrl + id);
   }
+
 
 }

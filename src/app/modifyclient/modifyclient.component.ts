@@ -14,7 +14,7 @@ export class ModifyclientComponent implements OnInit {
   constructor(private f: FormBuilder, public cs: ClientserviceService, private activatedRoute: ActivatedRoute) {
   }
 
-  form = this.f.group({
+  /*form = this.f.group({
     id: ['', Validators.required],
     cin: ['', [Validators.required, Validators.pattern('^[1-9]*$')]],
     nom: ['', [Validators.required]],
@@ -34,7 +34,7 @@ export class ModifyclientComponent implements OnInit {
   get numero() {
     return this.form.get('numero');
   }
-
+*/
   client: client;
   ident;
 

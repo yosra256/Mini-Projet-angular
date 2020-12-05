@@ -21,7 +21,7 @@ export class AuthentifiactionComponent implements OnInit {
      );
   }
 
-  log;
+ log;
   mdp;
   test: boolean = false;
 

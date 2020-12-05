@@ -16,7 +16,7 @@
     <input class="form-control mr-sm-2 " type="search" [(ngModel)]="cs.critere" placeholder="id/cin/nom/prenom/numero" aria-label="Search">
   <input class="form-control mr-sm-2 " type="search" [(ngModel)]="cs.valeur" aria-label="Search" placeholder="valeur">
     <button class="btn btn-outline-light my-2 my-sm-0 mx-1 h-25" type="submit" (click)="cs.rechercheindice1(cs.critere,cs.valeur)">Search</button>
-  <!--<a class="mod"  >recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</a>-->
+  <a class="mod"  style="color: #154D65" >recherche d'un client selon {{cs.critere}} ayant valeur {{cs.valeur}}</a>
   <button type="button" class="btn btn-secondary mx-3 " (click)="cs.deconnecter()">deconnecter</button>
 </div>
 </nav>
@@ -26,14 +26,7 @@
 
 
   <fieldset *ngIf="cs.affichcl" class=" text-center ">
-    <!--<div>ID:{{cs.idr}}</div>
-    CIN:{{cs.cinr}}
-    <div>NOM:{{cs.nomr}}</div>
-    PRENOM:{{cs.prenomr}}
-    <div>NUMERO:{{cs.numeror}}</div>
 
-    <button type="button" class="btn btn-outline-warning" (click)="cs.gotomodifier(cs.idr)" >Modifier</button>
-    <button type="button" class="btn btn-outline-danger" (click)="cs.deleteclient(cs.idr)">Supprimer</button>-->
     <table class="table">
       <thead>
       <tr>
@@ -63,8 +56,8 @@
     </table>
   </fieldset>
 
-<app-fils [nombre]="cs.nbr" (msgsomme)="show($event)" ></app-fils>
-<div *ngIf="affiche==true" class="modifcol">le rendement du salle de sport est : {{sommerendement}} DT</div>
+<app-fils [nombre]="cs.nbr" (msgsomme)="cs.showw($event)" ></app-fils>
+<div *ngIf="cs.affiche==true" class="modifcol">le rendement du salle de sport est : {{cs.sommerendement}} DT</div>
 
 
 
@@ -77,7 +70,7 @@
 </div>
 
 
-<table class="table table-hover">
+<table class="table table-hover mx-5">
   <thead>
   <tr>
     <th scope="col">ID</th>

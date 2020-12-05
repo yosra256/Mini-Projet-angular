@@ -14,14 +14,14 @@ export class AcceuilComponent implements OnInit {
   }
 
   searchValue: string;
-
+/*
   affiche: boolean = false;
   sommerendement: number;
 
   show(value) {
     this.affiche = !this.affiche;
     this.sommerendement = value;
-  }
+  }*/
 
 
 
