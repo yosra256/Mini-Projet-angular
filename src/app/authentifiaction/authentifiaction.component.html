@@ -1,17 +1,14 @@
 
 
-
-  <div >
+<center>
+  <div class="my-5">
     <label for="exampleInputEmail1">LOGIN</label>
-    <input type="text" [(ngModel)]="log" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="text" [(ngModel)]="log" class="form-control w-25 " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   <div >
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" [(ngModel)]="mdp" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" [(ngModel)]="mdp" class="form-control w-25" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" (click)="login(log,mdp)" class="btn btn-primary">Se Conecter</button>
 
+  <button type="submit" (click)="login(log,mdp)" class="btn btn-primary my-3">Se Conecter</button>
+</center>

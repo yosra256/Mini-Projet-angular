@@ -12,18 +12,6 @@ export class AddclientComponent implements OnInit {
   constructor(private f: FormBuilder, public cs: ClientserviceService) {
   }
 
-  /*form = this.f.group({
-    id: ['', Validators.required],
-    cin: ['', Validators.required],
-    nom: ['', [Validators.required]],
-    prenom: ['', [Validators.required]],
-    numero: ['', [Validators.required]]
-
-  });
-
-  get id() {
-    return this.form.get('id');
-  }*/
 
   ngOnInit(): void {
   }

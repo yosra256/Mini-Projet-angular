@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {client} from '../model/client';
 import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +48,7 @@ export class ClientserviceService {
   }
 
   public addclient(form) {
-   // this.test = false;
+    // this.test = false;
     this.ajouterclient(form).subscribe(
       (data) => {
         console.log('ajouuuut');
@@ -77,7 +78,7 @@ export class ClientserviceService {
   }
 
   modifyclient(id, form) {
-    //this.test = false;
+
     this.modify(id, form).subscribe(
       (data) => {
         console.log('midication effectuée');
@@ -113,10 +114,11 @@ export class ClientserviceService {
   prenomr;
   cinr;
   numeror;
-  affichcl=false;
+  affichcl = false;
+
 
   rechercheindice1(critere, valeur) {
-    this.affichcl=!this.affichcl;
+    this.affichcl = !this.affichcl;
     this.indice = -1;
     for (let i = 0; i < this.listclients.length; i++) {
       if ((critere == 'id') && (this.listclients[i].id == valeur)) {
@@ -144,22 +146,20 @@ export class ClientserviceService {
       this.cinr = this.listclients[this.indice].cin;
       this.numeror = this.listclients[this.indice].numero;
     } else {
-      this.affichcl=false;
+      this.affichcl = false;
       alert('ce client n\'existe pas');
     }
   }
 
-  gotomodifier(id)
-{
-  this.router.navigate(['modify/' + id]);
-}
-  gotoacceuil()
-  {
+  gotomodifier(id) {
+    this.router.navigate(['modify/' + id]);
+  }
+
+  gotoacceuil() {
     this.router.navigate(['acceuil']);
   }
 
-  deconnecter()
-  {
+  deconnecter() {
     this.router.navigate(['authentification']);
   }
 

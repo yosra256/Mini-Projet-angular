@@ -24,7 +24,7 @@ export class AcceuilComponent implements OnInit {
 
 
   ngOnInit(): void {
-//this.cs.afficherclients();
+
   }
 
 }
