@@ -16,24 +16,24 @@
   "clients": [
     {
       "id": "1",
-      "cin": "19811453",
+      "cin": "23455631",
       "nom": "makhlouf",
       "prenom": "yosra",
-      "numero": "25639590"
+      "numero": "25639592"
     },
     {
       "id": "2",
-      "cin": "18703236",
-      "nom": "saadi",
-      "prenom": "hajer",
-      "numero": "28675111"
+      "cin": "12322445",
+      "nom": "ayadi",
+      "prenom": "salma",
+      "numero": "26457788"
     },
     {
       "id": "3",
-      "cin": "18702303",
+      "cin": "23455631",
       "nom": "mabrouka",
       "prenom": "iheb",
-      "numero": "98627156"
+      "numero": "54678234"
     },
     {
       "id": "4",
@@ -65,10 +65,10 @@
     },
     {
       "id": "8",
-      "cin": "29595900",
-      "nom": "ayed",
-      "prenom": "wassim",
-      "numero": "21345123"
+      "cin": "23243545",
+      "nom": "makhlouf",
+      "prenom": "haithem",
+      "numero": "23455675"
     }
   ],
   "posts": [

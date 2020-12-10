@@ -11,7 +11,7 @@
     <label for="formGroupExampleInput2">CIN:</label>
     <input type="text" class="form-control w-25 mx-2" formControlName="cin"  id="formGroupExampleInput2" [(ngModel)]="client.cin">
   </div>
-  <div *ngIf="cs.cin.invalid && cs.cin.dirty"  [ngStyle]="{color:'red'}" >le CIN est obligatoire  </div>
+  <div *ngIf="cs.cin.invalid && cs.cin.dirty"  class="mx-5" [ngStyle]="{color:'red'}" >le CIN est obligatoire  </div>
   <div class="form-group mx-5 my-3">
     <label for="formGroupExampleInput2">Nom:</label>
     <input type="text" class="form-control w-25 mx-2" formControlName="nom" id="formGroupExampleInput3" [(ngModel)]="client.nom">
@@ -24,7 +24,7 @@
     <label for="formGroupExampleInput2">Numero de Telephone</label>
     <input type="text" class="form-control w-25 mx-2" formControlName="numero" id="formGroupExampleInput5" [(ngModel)]="client.numero">
   </div>
-  <div *ngIf="cs.numero.invalid && cs.numero.dirty" [ngStyle]="{color:'red'}">le numero de telephone doit etre composé de 8 chiffres </div>
+  <div *ngIf="cs.numero.invalid && cs.numero.dirty"class="mx-5" [ngStyle]="{color:'red'}">le numero de telephone doit etre composé de 8 chiffres </div>
 <div style="padding-left:2%">
   <button [disabled]="cs.form.invalid"  (click)="cs.modifyclient(cs.id.value,cs.form.value)" type="button" class="btn btn-warning mx-5">Modifier</button>
   <button type="button" class="btn btn-info " (click)="cs.gotoacceuil()">Retour</button>

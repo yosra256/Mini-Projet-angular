@@ -13,17 +13,18 @@ export class AcceuilComponent implements OnInit {
     this.cs.afficherclients();
   }
 
+  p: number = 1;
+
   searchValue: string;
-/*
-  affiche: boolean = false;
-  sommerendement: number;
 
-  show(value) {
-    this.affiche = !this.affiche;
-    this.sommerendement = value;
-  }*/
+  /*
+    affiche: boolean = false;
+    sommerendement: number;
 
-
+    show(value) {
+      this.affiche = !this.affiche;
+      this.sommerendement = value;
+    }*/
 
 
   ngOnInit(): void {

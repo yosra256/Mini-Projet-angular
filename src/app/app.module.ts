@@ -12,6 +12,7 @@ import { DeleteclientComponent } from './deleteclient/deleteclient.component';
 import { FilsComponent } from './fils/fils.component';
 import { AuthentifiactionComponent } from './authentifiaction/authentifiaction.component';
 import { RecherchePipe } from './recherche.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RecherchePipe } from './recherche.pipe';
         HttpClientModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+      NgxPaginationModule
     ],
   providers: [],
   bootstrap: [AppComponent]

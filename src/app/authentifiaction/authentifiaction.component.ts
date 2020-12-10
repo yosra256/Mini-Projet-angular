@@ -14,14 +14,15 @@ export class AuthentifiactionComponent implements OnInit {
   listagent: agent[];
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private http: HttpClient, public as: AuthentificationserviceService) {
-     this.http.get<agent[]>('http://localhost:3000/agents/').subscribe(
-       (data) => {
-         this.listagent = data;
-       }
-     );
+    this.http.get<agent[]>('http://localhost:3000/agents/').subscribe(
+      (data) => {
+        this.listagent = data;
+      }
+    );
   }
 
- log;
+  myimage: string = 'assets/images/muscu2.jpg';
+  log;
   mdp;
   test: boolean = false;
 

@@ -14,7 +14,7 @@ fieldset{
   background-color: #98B3BB !important;
 
 }
-body{
+body{ height:750px;
   background: linear-gradient(to bottom right, #2D788D, white)
 }
 /*.topnav {
